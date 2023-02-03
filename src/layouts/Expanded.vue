@@ -5,9 +5,13 @@
 </template>
 
 <script lang="ts" setup>
-defineProps({
+import {computed} from "vue";
+
+const props = defineProps({
   flex: {type: Number, default: 1}
 })
+
+const flex = computed(() => props.flex.toString())
 </script>
 
 <style lang="scss" scoped>
