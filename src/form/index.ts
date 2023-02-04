@@ -1,5 +1,3 @@
-import Switcher from "./Switcher.vue"
-
-export {
-    Switcher
-}
+export * from "./radio"
+export * from "./switch"
+export * from "./checkbox"
