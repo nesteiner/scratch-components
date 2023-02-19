@@ -31,6 +31,11 @@ const props = defineProps({
   crossAxisSize: {
     type: String as PropType<CrossAxisSize>,
     default: "min"
+  },
+
+  inline: {
+    type: Boolean,
+    default: false
   }
 })
 
@@ -38,7 +43,7 @@ const mainAxisAligment = computed(() => mappingAxisAligment(props.mainAxisAligme
 const crossAxisAligment = computed(() => mappingAxisAligment(props.crossAxisAligment))
 const mainAxisSize = computed(() => mappingAxisSize(props.mainAxisSize))
 const crossAxisSize = computed(() => mappingAxisSize(props.crossAxisSize))
-
+const display = computed(() => props.inline ? "inline-flex" : "flex")
 function mappingAxisAligment(alignment: MainAxisAlignment | CrossAxisAlignment): string {
   if (alignment == 'center') return 'center';
   if (alignment == 'start') return 'flex-start';
@@ -61,7 +66,7 @@ function mappingAxisSize(size: MainAxisSize | CrossAxisSize): string {
 div.row {
   width: v-bind(mainAxisSize);
   height: v-bind(crossAxisSize);
-  display: flex;
+  display: v-bind(display);
   justify-content: v-bind(mainAxisAligment);
   align-items: v-bind(crossAxisAligment);
 }
