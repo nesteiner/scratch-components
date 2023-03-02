@@ -13,7 +13,7 @@ import {computed, inject, onMounted, WritableComputedRef} from "vue";
 type valueType = number | string | boolean | object
 const props = withDefaults(
     defineProps<{
-      modelValue?: valueType[] | undefined,
+      modelValue?: valueType[]
       value: valueType,
       disabled?: boolean,
       label: string
@@ -27,7 +27,7 @@ const props = withDefaults(
 const emits = defineEmits(["update:modelValue"])
 const selected: WritableComputedRef<valueType[]> | undefined = props.modelValue !== undefined ? undefined : inject<WritableComputedRef<valueType[]>>("selected")
 const ischecked = computed(() => {
-  if(props.modelValue instanceof Array) {
+  if(props.modelValue !== undefined) {
     return props.modelValue.includes(props.value)
   } else {
     return selected?.value.includes(props.value) ?? false
@@ -39,7 +39,7 @@ const handleClick = () => {
     return
   }
 
-  if(props.modelValue instanceof Array) {
+  if(props.modelValue !== undefined) {
     let newvalue = [...props.modelValue]
     if(ischecked.value) {
       newvalue.splice(newvalue.indexOf(props.value), 1)

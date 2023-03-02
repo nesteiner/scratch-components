@@ -13,7 +13,7 @@ import {computed, inject, onMounted, WritableComputedRef} from "vue";
 const props = withDefaults(
     defineProps<{
       value: number | string | boolean | object,
-      modelValue?: number | string | boolean | object | undefined,
+      modelValue?: number | string | boolean | object,
       disabled?: boolean,
       label?: string
     }>(),

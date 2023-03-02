@@ -4,7 +4,7 @@
       <input :type="type"
              :maxlength="maxlength"
              :value="modelValue"
-             @input="updateInput($event.target.value)"
+             @input="updateInput($event)"
              :placeholder="placeholder"
              :disabled="disabled"/>
 
@@ -45,7 +45,11 @@ const props = withDefaults(
 )
 const emits = defineEmits(["update:modelValue"])
 const clear = () => emits("update:modelValue", "")
-const updateInput = (value: string) => emits("update:modelValue", value)
+// const updateInput = (value: string) => emits("update:modelValue", value)
+const updateInput = (event: Event) => {
+  let target = event.target as HTMLInputElement
+  emits("update:modelValue", target.value)
+}
 </script>
 
 <style lang="scss" scoped>

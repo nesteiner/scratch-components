@@ -10,7 +10,6 @@ import {computed, PropType} from 'vue'
 type MainAxisAlignment = 'center' | 'start' | 'end' | 'space-around' | 'space-between' | 'space-evenly'
 type CrossAxisAlignment = 'center' | 'start' | 'end' | 'space-around' | 'space-between' | 'space-evenly'
 type MainAxisSize = "max" | "min"
-type CrossAxisSize = "max" | "min"
 
 const props = defineProps({
   mainAxisAligment: {
@@ -28,21 +27,15 @@ const props = defineProps({
     default: "max"
   },
 
-  crossAxisSize: {
-    type: String as PropType<CrossAxisSize>,
-    default: "min"
-  },
-
   inline: {
     type: Boolean,
     default: false
-  }
+  },
 })
 
 const mainAxisAligment = computed(() => mappingAxisAligment(props.mainAxisAligment))
 const crossAxisAligment = computed(() => mappingAxisAligment(props.crossAxisAligment))
 const mainAxisSize = computed(() => mappingAxisSize(props.mainAxisSize))
-const crossAxisSize = computed(() => mappingAxisSize(props.crossAxisSize))
 const display = computed(() => props.inline ? "inline-flex" : "flex")
 function mappingAxisAligment(alignment: MainAxisAlignment | CrossAxisAlignment): string {
   if (alignment == 'center') return 'center';
@@ -52,7 +45,7 @@ function mappingAxisAligment(alignment: MainAxisAlignment | CrossAxisAlignment):
   return alignment
 }
 
-function mappingAxisSize(size: MainAxisSize | CrossAxisSize): string {
+function mappingAxisSize(size: MainAxisSize): string {
   if (size == "max"){
     return "100%"
   } else {
@@ -65,7 +58,7 @@ function mappingAxisSize(size: MainAxisSize | CrossAxisSize): string {
 <style lang="scss" scoped>
 div.row {
   width: v-bind(mainAxisSize);
-  height: v-bind(crossAxisSize);
+  height: auto;
   display: v-bind(display);
   justify-content: v-bind(mainAxisAligment);
   align-items: v-bind(crossAxisAligment);
