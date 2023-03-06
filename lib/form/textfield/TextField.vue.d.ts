@@ -63,6 +63,10 @@ declare const _sfc_main: import("vue").DefineComponent<{
             type: import("vue").PropType<"max" | "min">;
             default: string;
         };
+        crossAxisSize: {
+            type: import("vue").PropType<"max" | "min">;
+            default: string;
+        };
         inline: {
             type: BooleanConstructor;
             default: boolean;
@@ -72,6 +76,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
         mainAxisAligment: import("vue").ComputedRef<string>;
         crossAxisAligment: import("vue").ComputedRef<string>;
         mainAxisSize: import("vue").ComputedRef<string>;
+        crossAxisSize: import("vue").ComputedRef<string>;
         display: import("vue").ComputedRef<"flex" | "inline-flex">;
         mappingAxisAligment: (alignment: "space-around" | "space-between" | "space-evenly" | "center" | "end" | "start") => string;
         mappingAxisSize: (size: "max" | "min") => string;
@@ -89,6 +94,10 @@ declare const _sfc_main: import("vue").DefineComponent<{
             type: import("vue").PropType<"max" | "min">;
             default: string;
         };
+        crossAxisSize: {
+            type: import("vue").PropType<"max" | "min">;
+            default: string;
+        };
         inline: {
             type: BooleanConstructor;
             default: boolean;
@@ -98,6 +107,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
         mainAxisAligment: "space-around" | "space-between" | "space-evenly" | "center" | "end" | "start";
         crossAxisAligment: "space-around" | "space-between" | "space-evenly" | "center" | "end" | "start";
         mainAxisSize: "max" | "min";
+        crossAxisSize: "max" | "min";
     }>;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
