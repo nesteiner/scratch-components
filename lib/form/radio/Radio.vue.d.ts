@@ -1,12 +1,12 @@
 import { WritableComputedRef } from "vue";
 declare const _sfc_main: import("vue").DefineComponent<{
     modelValue: {
-        type: (StringConstructor | BooleanConstructor | ObjectConstructor | NumberConstructor)[];
+        type: (ObjectConstructor | BooleanConstructor | StringConstructor | NumberConstructor)[];
         required: false;
         default: undefined;
     };
     value: {
-        type: (StringConstructor | BooleanConstructor | ObjectConstructor | NumberConstructor)[];
+        type: (ObjectConstructor | BooleanConstructor | StringConstructor | NumberConstructor)[];
         required: true;
     };
     label: {
@@ -24,12 +24,12 @@ declare const _sfc_main: import("vue").DefineComponent<{
     selected: WritableComputedRef<string | number | boolean | object> | undefined;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: (StringConstructor | BooleanConstructor | ObjectConstructor | NumberConstructor)[];
+        type: (ObjectConstructor | BooleanConstructor | StringConstructor | NumberConstructor)[];
         required: false;
         default: undefined;
     };
     value: {
-        type: (StringConstructor | BooleanConstructor | ObjectConstructor | NumberConstructor)[];
+        type: (ObjectConstructor | BooleanConstructor | StringConstructor | NumberConstructor)[];
         required: true;
     };
     label: {
@@ -44,7 +44,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    modelValue: string | number | boolean | Record<string, any>;
     disabled: boolean;
+    modelValue: string | number | boolean | Record<string, any>;
 }>;
 export default _sfc_main;

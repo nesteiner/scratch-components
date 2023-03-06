@@ -11,10 +11,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
     props: any;
     width: import("vue").ComputedRef<string>;
     height: import("vue").ComputedRef<string>;
-    styleMap: import("vue").Ref<{
-        width: string;
-        height: string;
-    }>;
+    style: import("vue").CSSProperties;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     width: {
         type: NumberConstructor;

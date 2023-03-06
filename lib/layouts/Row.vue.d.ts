@@ -24,9 +24,10 @@ declare const _sfc_main: import("vue").DefineComponent<{
     mainAxisAligment: import("vue").ComputedRef<string>;
     crossAxisAligment: import("vue").ComputedRef<string>;
     mainAxisSize: import("vue").ComputedRef<string>;
-    display: import("vue").ComputedRef<"inline-flex" | "flex">;
+    display: import("vue").ComputedRef<"flex" | "inline-flex">;
     mappingAxisAligment: (alignment: MainAxisAlignment | CrossAxisAlignment) => string;
     mappingAxisSize: (size: MainAxisSize) => string;
+    style: import("vue").CSSProperties;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     mainAxisAligment: {
         type: PropType<MainAxisAlignment>;
@@ -45,9 +46,9 @@ declare const _sfc_main: import("vue").DefineComponent<{
         default: boolean;
     };
 }>>, {
+    inline: boolean;
     mainAxisAligment: MainAxisAlignment;
     crossAxisAligment: CrossAxisAlignment;
     mainAxisSize: MainAxisSize;
-    inline: boolean;
 }>;
 export default _sfc_main;

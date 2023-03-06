@@ -5,7 +5,8 @@ declare const _sfc_main: import("vue").DefineComponent<{
     };
 }, {
     props: any;
-    flex: import("vue").ComputedRef<string>;
+    flex: import("vue").ComputedRef<number>;
+    style: import("vue").CSSProperties;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     flex: {
         type: NumberConstructor;

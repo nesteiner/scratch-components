@@ -1,17 +1,17 @@
 <template>
-    <div class="center" v-center>
+    <div class="center" v-center :style="style">
         <slot/>
     </div>
 </template>
 
 <script lang="ts" setup>
 import {center as vCenter} from "@/directives"
-</script>
-
-<style lang="scss" scoped>
-div.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+import { StyleValue } from "vue";
+const style: StyleValue = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    height: "100%"
 }
-</style>
+</script>

@@ -1,11 +1,11 @@
 <template>
-  <div class="row">
+  <div class="row" :style="style">
     <slot/>
   </div>
 </template>
 
 <script lang="ts" setup>
-import {computed, PropType} from 'vue'
+import {computed, PropType, StyleValue} from 'vue'
 
 type MainAxisAlignment = 'center' | 'start' | 'end' | 'space-around' | 'space-between' | 'space-evenly'
 type CrossAxisAlignment = 'center' | 'start' | 'end' | 'space-around' | 'space-between' | 'space-evenly'
@@ -53,14 +53,12 @@ function mappingAxisSize(size: MainAxisSize): string {
   }
 
 }
-</script>
 
-<style lang="scss" scoped>
-div.row {
-  width: v-bind(mainAxisSize);
-  height: auto;
-  display: v-bind(display);
-  justify-content: v-bind(mainAxisAligment);
-  align-items: v-bind(crossAxisAligment);
+const style: StyleValue = {
+  width: mainAxisSize.value,
+  height: "100%",
+  display: display.value,
+  justifyContent: mainAxisAligment.value,
+  alignItems: crossAxisAligment.value
 }
-</style>
+</script>

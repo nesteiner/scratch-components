@@ -1,23 +1,20 @@
 <template>
-  <div class="expanded">
+  <div class="expanded" :style="style">
     <slot/>
   </div>
 </template>
 
 <script lang="ts" setup>
-import {computed} from "vue";
+import {computed, StyleValue} from "vue";
 
 const props = defineProps({
   flex: {type: Number, default: 1}
 })
 
-const flex = computed(() => props.flex.toString())
-</script>
-
-<style lang="scss" scoped>
-div.expanded {
-  flex-grow: v-bind(flex);
-  flex-shrink: 1;
-  flex-basis: auto;
+const flex = computed(() => props.flex)
+const style: StyleValue = {
+  flexGrow: flex.value,
+  flexShrink: 1,
+  flexBasis: "auto"
 }
-</style>
+</script>

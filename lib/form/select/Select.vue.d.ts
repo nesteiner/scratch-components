@@ -1,7 +1,7 @@
 type valueType = number | string | boolean | object;
 declare const _sfc_main: import("vue").DefineComponent<{
     modelValue: {
-        type: (StringConstructor | BooleanConstructor | ObjectConstructor | NumberConstructor)[];
+        type: (ObjectConstructor | BooleanConstructor | StringConstructor | NumberConstructor)[];
         required: true;
     };
 }, {
@@ -15,11 +15,11 @@ declare const _sfc_main: import("vue").DefineComponent<{
     clickOption: (option: valueType) => void;
     readonly Row: import("vue").DefineComponent<{
         mainAxisAligment: {
-            type: import("vue").PropType<"center" | "start" | "end" | "space-around" | "space-between" | "space-evenly">;
+            type: import("vue").PropType<"space-around" | "space-between" | "space-evenly" | "center" | "end" | "start">;
             default: string;
         };
         crossAxisAligment: {
-            type: import("vue").PropType<"center" | "start" | "end" | "space-around" | "space-between" | "space-evenly">;
+            type: import("vue").PropType<"space-around" | "space-between" | "space-evenly" | "center" | "end" | "start">;
             default: string;
         };
         mainAxisSize: {
@@ -35,16 +35,17 @@ declare const _sfc_main: import("vue").DefineComponent<{
         mainAxisAligment: import("vue").ComputedRef<string>;
         crossAxisAligment: import("vue").ComputedRef<string>;
         mainAxisSize: import("vue").ComputedRef<string>;
-        display: import("vue").ComputedRef<"inline-flex" | "flex">;
-        mappingAxisAligment: (alignment: "center" | "start" | "end" | "space-around" | "space-between" | "space-evenly") => string;
+        display: import("vue").ComputedRef<"flex" | "inline-flex">;
+        mappingAxisAligment: (alignment: "space-around" | "space-between" | "space-evenly" | "center" | "end" | "start") => string;
         mappingAxisSize: (size: "max" | "min") => string;
+        style: import("vue").CSSProperties;
     }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
         mainAxisAligment: {
-            type: import("vue").PropType<"center" | "start" | "end" | "space-around" | "space-between" | "space-evenly">;
+            type: import("vue").PropType<"space-around" | "space-between" | "space-evenly" | "center" | "end" | "start">;
             default: string;
         };
         crossAxisAligment: {
-            type: import("vue").PropType<"center" | "start" | "end" | "space-around" | "space-between" | "space-evenly">;
+            type: import("vue").PropType<"space-around" | "space-between" | "space-evenly" | "center" | "end" | "start">;
             default: string;
         };
         mainAxisSize: {
@@ -56,14 +57,14 @@ declare const _sfc_main: import("vue").DefineComponent<{
             default: boolean;
         };
     }>>, {
-        mainAxisAligment: "center" | "start" | "end" | "space-around" | "space-between" | "space-evenly";
-        crossAxisAligment: "center" | "start" | "end" | "space-around" | "space-between" | "space-evenly";
-        mainAxisSize: "max" | "min";
         inline: boolean;
+        mainAxisAligment: "space-around" | "space-between" | "space-evenly" | "center" | "end" | "start";
+        crossAxisAligment: "space-around" | "space-between" | "space-evenly" | "center" | "end" | "start";
+        mainAxisSize: "max" | "min";
     }>;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: (StringConstructor | BooleanConstructor | ObjectConstructor | NumberConstructor)[];
+        type: (ObjectConstructor | BooleanConstructor | StringConstructor | NumberConstructor)[];
         required: true;
     };
 }>> & {

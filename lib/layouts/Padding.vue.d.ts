@@ -34,12 +34,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
             default: number;
         };
     }>> & {}>>;
-    styleMap: import("vue").Ref<{
-        paddingLeft: string;
-        paddingRight: string;
-        paddingTop: string;
-        paddingBottom: string;
-    }>;
+    style: import("vue").CSSProperties;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, {}, string, import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     left: {
         type: NumberConstructor;
@@ -60,7 +55,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
 }>>, {
     left: number;
     right: number;
-    top: number;
     bottom: number;
+    top: number;
 }>;
 export default _sfc_main;

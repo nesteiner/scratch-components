@@ -1,6 +1,6 @@
 declare const _sfc_main: import("vue").DefineComponent<{
     modelValue: {
-        type: (StringConstructor | BooleanConstructor | ObjectConstructor | NumberConstructor)[];
+        type: (ObjectConstructor | BooleanConstructor | StringConstructor | NumberConstructor)[];
         required: true;
     };
 }, {
@@ -9,7 +9,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
     selected: import("vue").WritableComputedRef<string | number | boolean | object>;
 }, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
     modelValue: {
-        type: (StringConstructor | BooleanConstructor | ObjectConstructor | NumberConstructor)[];
+        type: (ObjectConstructor | BooleanConstructor | StringConstructor | NumberConstructor)[];
         required: true;
     };
 }>> & {

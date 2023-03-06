@@ -1,11 +1,11 @@
 <template>
-  <div class="sizedbox" :style="styleMap">
+  <div class="sizedbox" :style="style">
     <slot/>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from "vue"
+import { computed, ref, StyleValue } from "vue"
 
 const props = defineProps({
   width: {
@@ -22,8 +22,8 @@ const props = defineProps({
 const width = computed(() => props.width >= 0 ? props.width.toString() + 'px' : 'fit-content')
 const height = computed(() => props.height >= 0 ? props.height.toString() + 'px' : 'fit-content')
 
-const styleMap = ref({
+const style: StyleValue = {
   width: width.value,
   height: height.value
-})
+}
 </script>

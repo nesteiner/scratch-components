@@ -12,7 +12,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
         default: boolean;
     };
     value: {
-        type: (StringConstructor | BooleanConstructor | ObjectConstructor | NumberConstructor)[];
+        type: (ObjectConstructor | BooleanConstructor | StringConstructor | NumberConstructor)[];
         required: true;
     };
     label: {
@@ -37,7 +37,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
         default: boolean;
     };
     value: {
-        type: (StringConstructor | BooleanConstructor | ObjectConstructor | NumberConstructor)[];
+        type: (ObjectConstructor | BooleanConstructor | StringConstructor | NumberConstructor)[];
         required: true;
     };
     label: {
@@ -47,7 +47,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
 }>> & {
     "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
 }, {
-    modelValue: unknown[];
     disabled: boolean;
+    modelValue: unknown[];
 }>;
 export default _sfc_main;

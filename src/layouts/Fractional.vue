@@ -1,11 +1,11 @@
 <template>
-  <div class="fractional">
+  <div class="fractional" :style="style">
     <slot/>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { computed } from "vue"
+import { computed, StyleValue } from "vue"
 
 const props = defineProps({
   widthFactor: {type: Number, default: 1.0},
@@ -15,11 +15,9 @@ const props = defineProps({
 // 这边是比例，格式化一下
 const widthFactor = computed(() => Number(props.widthFactor * 100).toFixed(0).toString() + '%')
 const heightFactor = computed(() => Number(props.heightFactor * 100).toFixed(0).toString() + '%')
-</script>
 
-<style lang="scss" scoped>
-div.fractional {
-  width: v-bind(widthFactor);
-  height: v-bind(heightFactor);
+const style: StyleValue = {
+  width: widthFactor.value,
+  height: heightFactor.value
 }
-</style>
+</script>

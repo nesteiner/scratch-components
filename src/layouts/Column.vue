@@ -1,11 +1,11 @@
 <template>
-  <div class="column">
+  <div class="column" :style="style">
     <slot/>
   </div>
 </template>
 
 <script lang="ts" setup>
-import {computed, PropType} from 'vue'
+import {computed, PropType, StyleValue} from 'vue'
 
 type MainAxisAlignment = 'center' | 'start' | 'end' | 'space-around' | 'space-between' | 'space-evenly'
 type CrossAxisAlignment = 'center' | 'start' | 'end' | 'space-around' | 'space-between' | 'space-evenly'
@@ -54,15 +54,13 @@ function mappingAxisSize(size: MainAxisSize): string {
   }
 
 }
-</script>
 
-<style lang="scss" scoped>
-div.column {
-  display: v-bind(display);
-  width: fit-content;
-  height: v-bind(mainAxisSize);
-  flex-direction: column;
-  justify-content: v-bind(mainAxisAligment);
-  align-items: v-bind(crossAxisAligment);
+const style: StyleValue = {
+  display: display.value,
+  width: "100%",
+  height: mainAxisSize.value,
+  flexDirection: "column",
+  justifyContent: mainAxisAligment.value,
+  alignItems: crossAxisAligment.value
 }
-</style>
+</script>
