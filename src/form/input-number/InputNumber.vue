@@ -18,7 +18,8 @@
 </template>
 
 <script lang="ts" setup>
-import {Expanded, Row, SizedBox} from "@/layouts"
+import {Expanded, Row} from "@/layouts"
+import { SizedBox } from "@/container";
 import {computed} from "vue";
 
 const emits = defineEmits(["update:modelValue"])

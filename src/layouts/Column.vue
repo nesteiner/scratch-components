@@ -44,7 +44,8 @@ const crossAxisAligment = computed(() => mappingAxisAligment(props.crossAxisAlig
 const mainAxisSize = computed(() => mappingAxisSize(props.mainAxisSize))
 const crossAxisSize = computed(() => mappingAxisSize(props.crossAxisSize))
 const display = computed(() => props.inline ? "inline-flex" : "flex")
-function mappingAxisAligment(alignment: MainAxisAlignment | CrossAxisAlignment): string {
+
+const mappingAxisAligment = (alignment: MainAxisAlignment | CrossAxisAlignment): string => {
   if (alignment == 'center') return 'center';
   if (alignment == 'start') return 'flex-start';
   if (alignment == 'end') return 'flex-end';
@@ -52,13 +53,12 @@ function mappingAxisAligment(alignment: MainAxisAlignment | CrossAxisAlignment):
   return alignment
 }
 
-function mappingAxisSize(size: MainAxisSize | CrossAxisSize): string {
+const mappingAxisSize = (size: MainAxisSize | CrossAxisSize): string => {
   if (size == "max"){
     return "100%"
   } else {
     return "auto"
   }
-
 }
 
 const style: StyleValue = {
